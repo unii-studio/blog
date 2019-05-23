@@ -1,8 +1,9 @@
 module.exports = {
+  pathPrefix: "/blog",
   siteMetadata: {
     title: `UNII`,
     description: `BLOGGING! <:c()`,
-    author: `@gatsbyjs`,
+    author: `@willieLjohnson`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
