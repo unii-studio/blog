@@ -1,20 +1,19 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import { Link } from "gatsby";
+
+import SEO from "../components/seo";
 
 const Template = ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div className="blog-post-container">
-      <Helmet title={`UNII - ${post.frontmatter.title}`} />
-      <div className="blog-post">
-        <h1>{post.frontmatter.title}</h1>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
-      </div>
-    </div>
+    <Layout>
+      <SEO title={`UNII - ${post.frontmatter.title}`} />
+      <h1>{post.frontmatter.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Link to="/">Go back to the homepage</Link>
+    </Layout>
   );
 };
 
