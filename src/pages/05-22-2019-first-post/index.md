@@ -1,7 +1,7 @@
 ---
 
 path: "/hello-universe"
-date: "2019-22-05T23:09:000Z"
+date: "2019-05-22 05:30"
 title: "First Post"
 
 ---
