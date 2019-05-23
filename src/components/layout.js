@@ -72,7 +72,7 @@ const Layout = ({ children }) => (
                   </main>
                   <div style={{ flex: 1 }}>
                     <Sidebar
-                      title="Content"
+                      title="UNII"
                       description="Posts on life, technology, and games."
                     />
                     <Sidebar
