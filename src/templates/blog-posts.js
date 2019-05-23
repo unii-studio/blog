@@ -1,8 +1,9 @@
-import React from "react"
-import Helmet from "react-helmet"
+import React from "react";
+import Helmet from "react-helmet";
+import { graphql } from "gatsby";
 
 const Template = ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
   return (
     <div className="blog-post-container">
       <Helmet title={`UNII - ${post.frontmatter.title}`} />
@@ -14,7 +15,20 @@ const Template = ({ data }) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Template
+export const pageQuery = graphql`
+  query BlogPostByPath($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
+      }
+    }
+  }
+`;
+
+export default Template;
